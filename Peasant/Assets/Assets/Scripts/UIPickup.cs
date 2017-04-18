@@ -7,7 +7,7 @@ public class UIPickup : MonoBehaviour {
     bool growDone = false;
     public Text text;
     // Use this for initialization
-    private void OnEnable()
+    public void OnEnable()
     {
         StartCoroutine("Grow");
 
@@ -18,7 +18,7 @@ public class UIPickup : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown(0) && growDone)
         {
-            gameObject.SetActive(false);
+            GetComponent<RectTransform>().localScale = new Vector3(0, 0);
             text.text = "";
         }
 	}

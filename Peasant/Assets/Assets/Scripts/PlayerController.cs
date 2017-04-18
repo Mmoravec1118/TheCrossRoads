@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float m_GravityMultiplier;
     [SerializeField]
-    private MouseLook m_MouseLook;
+    public MouseLook m_MouseLook;
     [SerializeField]
     private bool m_UseFovKick;
     [SerializeField]
@@ -66,10 +66,7 @@ public class PlayerController : MonoBehaviour {
     private bool m_Jumping;
     private AudioSource m_AudioSource;
 
-
-    public List<Pickup> inventory;
-
-    bool canMove = true;
+    public bool canMove = true;
     // Use this for initialization
     private void Start()
     {
@@ -85,7 +82,6 @@ public class PlayerController : MonoBehaviour {
         m_AudioSource = GetComponent<AudioSource>();
         m_MouseLook.Init(transform, m_Camera.transform);
         // Screen.showCursor 
-        inventory = new List<Pickup>();
     }
 
 

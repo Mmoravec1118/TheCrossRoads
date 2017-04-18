@@ -8,7 +8,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Fade : MonoBehaviour {
 
     public Image image;
- float fadeSpeed = 0.4f;
+    float fadeSpeed = 0.4f;
     float fadeLength = 2;
     bool fade = false;
     private float alpha = 0.0f;

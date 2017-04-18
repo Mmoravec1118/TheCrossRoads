@@ -13,7 +13,7 @@ public class RectileController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Rectile = GameObject.FindGameObjectWithTag("Rectile").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class RectileController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(GetComponent<Camera>().transform.position, GetComponent<Camera>().transform.forward, out hit, interactDistance))
         {
-            if (hit.transform.tag == "Interact")
+            if (hit.transform.tag == "Interact" || hit.transform.tag == "PickUp")
             {
                 Rectile.sprite = interactImage;
                 if (Input.GetMouseButtonDown(0))
