@@ -41,6 +41,7 @@ public class Inventory : MonoBehaviour {
                 GameObject obj = Instantiate(Resources.Load("InvItem"), InvPanel.transform) as GameObject;
                 obj.GetComponent<RectTransform>().localPosition = pos;
                 obj.GetComponent<Image>().sprite = item.uIImage;
+                obj.GetComponent<MouseOverToolTip>().pickUp = item;
                 xpos += (int)obj.GetComponent<RectTransform>().rect.width + 25;
             }
         }

@@ -19,12 +19,13 @@ public class portal : MonoBehaviour
     public void Start()
     {
         GetComponent<AudioSource>().Play();
+        image = GameObject.FindGameObjectWithTag("Fade").GetComponent<Image>();
     }
     private void OnTriggerEnter(Collider collision)
     {
         StartCoroutine("FadeOut");
-        GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().velocity.Set(0f,10f,0f);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().velocity = new Vector3(0, 10, 0);
     }
 
     IEnumerator FadeOut()
