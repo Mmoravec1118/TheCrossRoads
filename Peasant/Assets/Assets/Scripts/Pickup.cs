@@ -31,7 +31,7 @@ public class Pickup : MonoBehaviour
         }
         uIBit.GetComponent<RectTransform>().sizeDelta = uIImage.rect.size;
         uIBit.GetComponent<Image>().sprite = uIImage;
-        uIBit.GetComponent<UIPickup>().text.text = pickUpText;
+        GameObject.FindGameObjectWithTag("Text").GetComponent<Text>().text = pickUpText;
         uIBit.GetComponent<UIPickup>().OnEnable();
     }
 }
