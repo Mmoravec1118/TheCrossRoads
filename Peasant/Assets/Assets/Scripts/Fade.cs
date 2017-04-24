@@ -17,6 +17,7 @@ public class Fade : MonoBehaviour {
     public string sceneToLoad;
     void Action()
     {
+        image = GameObject.FindGameObjectWithTag("Fade").GetComponent<Image>();
         StartCoroutine("FadeOut");
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = false;
     }
