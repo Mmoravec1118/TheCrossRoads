@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Inventory : MonoBehaviour {
 
@@ -19,7 +20,7 @@ public class Inventory : MonoBehaviour {
     void Start () {
         Time.timeScale = 1;
         inventory = new List<Pickup>();
-
+        SceneManager.sceneLoaded += OnLevelLoad;
     }
 
     // Update is called once per frame
@@ -59,6 +60,12 @@ public class Inventory : MonoBehaviour {
             {
                 Destroy(item.gameObject);
             }
+            GameObject.FindGameObjectWithTag("Text").GetComponent<Text>().text = "";
         }
+    }
+
+    private void OnLevelLoad(Scene scene, LoadSceneMode mode)
+    {
+        Rectile.SetActive(true);
     }
 }

@@ -307,12 +307,13 @@ public class PlayerController : MonoBehaviour {
     {
         if (canMove)
         {
-            m_MouseLook.lockCursor = false;
+            m_MouseLook.SetCursorLock(false);
             //m_MouseLook.UpdateCursorLock();
             animator.SetTrigger("Die");
             canMove = false;
             StartCoroutine("CameraLookAtPlayer");
             Camera.main.cullingMask = -1;
+            Instantiate(Resources.Load("GameOver"), GameObject.FindGameObjectWithTag("Canvas").transform);
         }
     }
 
