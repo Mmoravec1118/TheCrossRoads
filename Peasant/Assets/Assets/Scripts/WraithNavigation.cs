@@ -31,7 +31,7 @@ public class WraithNavigation : MonoBehaviour {
             if (timer <= 0)
             {
                 sound.Play();
-                timer = 30;
+                timer = 15;
             }
         }
 

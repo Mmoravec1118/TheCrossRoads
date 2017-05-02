@@ -18,6 +18,15 @@ public class DontDestroy : MonoBehaviour {
         {
             DestroyObject(gameObject);
         }
+        SceneManager.sceneLoaded += DestroyThis;
+    }
+
+    private void DestroyThis(Scene arg0, LoadSceneMode arg1)
+    {
+        if (arg0.buildIndex == SceneUtility.GetBuildIndexByScenePath("Scenes/EndScreen"))
+        {
+           Destroy(GameObject.FindGameObjectWithTag("Canvas"));
+        }
     }
 
     public void Update()
@@ -27,6 +36,7 @@ public class DontDestroy : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+    
 
 
 }

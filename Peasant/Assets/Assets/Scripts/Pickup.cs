@@ -14,6 +14,23 @@ public class Pickup : MonoBehaviour
     {
         uIBit = GameObject.FindGameObjectWithTag("UiBit");
         DontDestroyOnLoad(this);
+        foreach (Pickup pickUp in GameObject.FindGameObjectWithTag("InventoryViewer").GetComponent<Inventory>().inventory)
+        {
+            if (pickUp.pickUpText == pickUpText)
+            {
+                foreach (Component item in gameObject.GetComponents<Component>())
+                {
+                    if (item != transform && item != this)
+                    {
+                        Destroy(item);
+                    }
+                }
+                foreach (Transform child in transform)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+        }
     }
     void Action()
     {
