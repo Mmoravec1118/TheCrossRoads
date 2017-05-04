@@ -21,6 +21,8 @@ public class Inventory : MonoBehaviour {
         Time.timeScale = 1;
         inventory = new List<Pickup>();
         SceneManager.sceneLoaded += OnLevelLoad;
+
+
     }
 
     // Update is called once per frame

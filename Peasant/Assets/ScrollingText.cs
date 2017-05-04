@@ -8,9 +8,10 @@ public class ScrollingText : MonoBehaviour
     public float off;
     public float speed = 100;
     public GameObject title;
-
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         // intro = { "Thanks for playing!", "Designer, Engineer: Marty Moravec", "Music: Bob Carpenter"};
         Invoke("FinalScreen", 20);
     }
